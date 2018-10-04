@@ -59,13 +59,14 @@ class grid_world():
         hor = state - self._dims[1]*ver
         return ver,hor
 
-    def render(self):
+    def render(self,print_map=False):
         self._world = np.zeros(self._dims)
         for obstacle in self._obstacles:
             y,x = self.decode_coords(obstacle)
             self._world[y,x]=3
         self._world[self._agent[1],self._agent[0]] = 1
         self._world[self._target[1],self._target[0]] = 2
-        print('__________________________')
-        print(self._world)
+        if print_map:
+            print('__________________________')
+            print(self._world)
         return self._world
