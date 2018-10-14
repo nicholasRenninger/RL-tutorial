@@ -24,10 +24,10 @@ class tabular_Qlearning():
         else:
             return self.greedy(state)
 
-    def epsilon_decay(self,rate=0.99,min=0.1):
+    def epsilon_decay(self,rate=0.999,min=0.01):
         self._epsilon = np.clip(rate*self._epsilon,min,1.0)
 
-    def alpha_decay(self,rate=0.99,min=1e-3):
+    def alpha_decay(self,rate=0.999,min=0.01):
         self._alpha = np.clip(rate*self._alpha,min,self._initial_alpha)
 
     def train(self,state,action,next_state,reward,done):

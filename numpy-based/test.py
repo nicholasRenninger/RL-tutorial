@@ -7,22 +7,22 @@ import matplotlib.pyplot as plt
 env = cliff_walking()
 ns = env.num_states
 na = env.num_actions
-dims = [2,10,10,4]
+dims = [2,15,15,4]
 np.random.seed(123)
 agent = double_deep_Qlearning(dims,learning_rate=1e-2)
 buffer = ReplayBuffer(100000,2,1)
 
 
-Ntrain = 2000
-Nsteps = 100
-plt.ion()
-window = plt.figure()
+Ntrain = 1000
+Nsteps = 200
+#plt.ion()
+#window = plt.figure()
 for episode in range(Ntrain+1):
     env.reset()
     done = False
     step = 0
     loss = np.zeros((4,1))
-    agent.epsilon_decay(0.999)
+    agent.epsilon_decay(0.997)
     while(not done and step<=Nsteps):
         state = env.get_coords()
         action = agent.epsilon_greedy(state)
@@ -36,17 +36,18 @@ for episode in range(Ntrain+1):
 
         step += 1
         if(episode>=Ntrain-5):
-            map_env = env.get_world_display()
-            plt.clf()
-            plt.imshow(map_env)
-            window.canvas.draw()
-            window.canvas.flush_events()
+            env.render()
+            #map_env = env.get_world_display()
+            #plt.clf()
+            #plt.imshow(map_env)
+            #window.canvas.draw()
+            #window.canvas.flush_events()
     if(episode%(Ntrain/10)==0):
-        print(episode,step,loss.mean(),agent._epsilon)
+        print(episode,step,loss.mean(),agent._epsilon,done)
 
 
-plt.ion()
-window = plt.figure()
+#plt.ion()
+#window = plt.figure()
 for i in range(10):
     env.reset()
     done = False
@@ -55,9 +56,11 @@ for i in range(10):
         map_env = env.get_world_display()
         state = env.get_coords()
         action = agent.greedy(state)
-        _,_,done=env.step(action)
+        ns,_,done=env.step(action)
+        print(ns,done)
         step+=1
-        plt.clf()
-        plt.imshow(map_env)
-        window.canvas.draw()
-        window.canvas.flush_events()
+        env.render()
+        #plt.clf()
+        #plt.imshow(map_env)
+        #window.canvas.draw()
+        #window.canvas.flush_events()

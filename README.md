@@ -1,5 +1,7 @@
 # Reinforcement Learning tutorial
-By: Juan Pablo Martínez Piazuelo
+By: 
+Juan Pablo Martínez Piazuelo
+Daniel Esteban Ochoa Tamayo
 
 This tutorial is organized as follows:
 1. Tabular Q-learning (gridworld)
