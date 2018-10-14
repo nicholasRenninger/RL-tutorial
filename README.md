@@ -9,4 +9,5 @@ This tutorial is organized as follows:
 3. Deep Deterministic Policy Gradient (continous control)
 
 # Launch tutorial:
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/jpmartinez10/RL-tutorial.git/master?urlpath=lab)
+
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/jpmartinez10/RL-tutorial/master?urlpath=lab)
