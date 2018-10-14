@@ -70,22 +70,22 @@ class grid_world():
             reward = -1.0
         return reward
 
-    def get_world_display(self):
+    def get_map(self):
         self._world = np.zeros((self._dims[1],self._dims[0]))
         for cell in self._obstacles:
             y,x = self._states[cell]
             self._world[y,x] = 1
-        y,x = self._states[self._agent]
-        self._world[y,x] = 3
         y,x = self._states[self._target]
         self._world[y,x] = 2
+        y,x = self._states[self._agent]
+        self._world[y,x] = 3
         return self._world
 
     def render(self):
         if self._window == None:
             plt.ion()
             self._window = plt.figure(figsize=(3,3))
-        map_env = self.get_world_display()
+        map_env = self.get_map()
         plt.clf()
         plt.imshow(map_env,cmap='viridis',vmin=0,vmax=3)
         plt.axis('off')
@@ -162,22 +162,22 @@ class cliff_walking():
             reward = -0.1
         return reward
 
-    def get_world_display(self):
+    def get_map(self):
         self._world = np.zeros((self._dims[1],self._dims[0]))
         for cell in self._cliff:
             y,x = self._states[cell]
             self._world[y,x] = 1
-        y,x = self._states[self._agent]
-        self._world[y,x] = 3
         y,x = self._states[self._target]
         self._world[y,x] = 2
+        y,x = self._states[self._agent]
+        self._world[y,x] = 3
         return self._world
 
     def render(self):
         if self._window == None:
             plt.ion()
             self._window = plt.figure()
-        map_env = self.get_world_display()
+        map_env = self.get_map()
         plt.clf()
         plt.imshow(map_env,cmap='viridis',vmin=0,vmax=3)
         self._window.canvas.draw()

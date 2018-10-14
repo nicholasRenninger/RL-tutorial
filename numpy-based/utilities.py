@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def plot_policies(policies,idx=(50,30),size=(15,10),dims=(8,8)):
+def plot_policies(policies,idx=(50,30),size=(15,15),dims=(8,8)):
     assert len(policies)>=idx[0], "The number of policies is less than the number of episodes to sample from (default: 50)."
     assert idx[0]>=idx[1], "The number of episodes to sample from is smaller than the number of policies to plot."
     cols = 5
@@ -22,4 +22,20 @@ def plot_policies(policies,idx=(50,30),size=(15,10),dims=(8,8)):
         plt.subplot(rows,cols,i+1)
         plt.imshow(policy.reshape(dims[1],dims[0]),cmap='viridis',vmin=0,vmax=3);
         plt.axis('off');
+        plt.title('Policy episode: '+str(indexes[i]));
+        
+def plot_trayectory(trayectory,size=(15,10)):
+    num = len(trayectory)
+    cols = 5
+    rows = int(np.ceil((num)/cols))
+    plt.figure(figsize=size)
+    for i,state in enumerate(trayectory):
+        plt.subplot(rows,cols,i+1)
+        plt.imshow(state,cmap='viridis',vmin=0,vmax=3);
+        plt.axis('off');
+        
+def print_actions_taken(actions):
+    action_names = ['UP','RIGHT','DOWN','LEFT']
+    for i,a in enumerate(actions):
+        print('Step:',i+1,'   Action taken:',action_names[a])
         
