@@ -1,1 +1,4 @@
+*.pyc
 /under_dev
+*.ipynb_checkpoints
+*/__pycache__
