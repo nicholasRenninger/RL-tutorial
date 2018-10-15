@@ -42,15 +42,17 @@ class tabular_Qlearning():
         return np.argmax(self.Qtable,axis=1)
 
 class double_deep_Qlearning():
-    def __init__(self,dims=[2,100,100,4],learning_rate=0.01):
+    def __init__(self,dims=[2,15,15,4],lr=0.01):
         self._dims = dims #list with layer dimensions: [input, hidden1, hidden2, ..., output]
         self._n_layers = len(dims)-1
-        self._initial_lr = learning_rate
+        self._initial_lr = lr
         self._gamma = 0.99
         self._tau = 1e-3
         self.reset()
 
-    def reset(self):
+    def reset(self,fix_seed=False,seed=123):
+        if(fix_seed):
+            np.random.seed(seed)
         self._epsilon = 1.0
         self._lr = self._initial_lr
         self._weights, self._target_weights  = self.create_weights()
@@ -161,7 +163,7 @@ class double_deep_Qlearning():
         return loss
 
 class ReplayBuffer(object):
-    def __init__(self, buffer_size,state_dim,action_dim,random_seed=123):
+    def __init__(self, buffer_size=100000,state_dim=2,action_dim=1,random_seed=123):
         self.buffer_size = buffer_size
         self.count = 0
         self.buffer = deque()

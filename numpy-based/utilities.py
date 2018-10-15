@@ -39,3 +39,31 @@ def print_actions_taken(actions):
     for i,a in enumerate(actions):
         print('Step:',i+1,'   Action taken:',action_names[a])
         
+def extract_policy(env,agent):
+    policy = np.zeros((env._dims[1],env._dims[0]))
+    for pos in env._possible_positions:
+        state = np.array(env._states[pos]).reshape(env.state_dim,1)
+        action = agent.greedy(state)
+        policy[state[0],state[1]] = action
+    return policy
+        
+def plot_policies_DQN(policies,size=(8,4)):
+        
+    print('______________________')
+    print('UP, RIGHT, DOWN, LEFT')
+    plt.figure(figsize=(2,1))
+    plt.imshow(np.reshape(list(np.arange(0,4)),(1,4)),cmap='viridis',vmin=0,vmax=3);
+    plt.axis('off');
+    
+    plt.figure(figsize=size)
+    plt.subplot(1,2,1)
+    plt.imshow(policies[0],cmap='viridis',vmin=0,vmax=3);
+    plt.axis('off');
+    plt.title('Initial policy');
+    plt.subplot(1,2,2)
+    plt.imshow(policies[1],cmap='viridis',vmin=0,vmax=3);
+    plt.axis('off');
+    plt.title('Current policy');
+    
+
+        
