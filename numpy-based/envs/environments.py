@@ -96,5 +96,5 @@ class grid_world():
         plt.axis('off')
         self._window.canvas.draw()
         self._window.canvas.flush_events()
-
+        return self.get_map()
 
