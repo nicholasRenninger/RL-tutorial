@@ -10,6 +10,4 @@ This tutorial is organized as follows:
 
 # Launch tutorial:
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/jpmartinez10/RL-tutorial/master?urlpath=lab)
-
 [![Azure Notebooks](https://notebooks.azure.com/launch.png)](https://notebooks.azure.com/import/gh/jpmartinez10/RL-tutorial)

@@ -19,12 +19,15 @@ class grid_world():
         self._window = None #Render window
         self.reset()
 
-    def reset(self,random_initial=False):
+    def reset(self,random_initial=False,coords=False):
         if not random_initial:
             self._agent = 0
         else:
             self._agent = np.random.choice(self._possible_positions)
-        return self._agent
+        if(not coords):
+            return self._agent
+        else:
+            return self.get_coords()
 
     def observe(self):
         return self._agent, self._target
@@ -33,12 +36,14 @@ class grid_world():
         coords = self._states[self._agent]
         return np.array(coords).reshape(self.state_dim,1)
 
-    def step(self,action):
+    def step(self,action,coords=False):
         assert 0<=action<=3, "Invalid action. The action must be an integer within [0,3]"
         self.move(action)
         state,target = self.observe()
         reward = self.reward()
         done = True if (state==target) else False
+        if(coords):
+            state = self.get_coords()
         return state, reward, done
 
     def move(self,action):
@@ -65,7 +70,7 @@ class grid_world():
     def reward(self):
         state,target = self.observe()
         if(state==target):
-            reward = 10.0
+            reward = 1.0
         else:
             reward = -1.0
         return reward
