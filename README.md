@@ -8,6 +8,8 @@ This tutorial is organized as follows:
 2. Double Deep Q-learning (gridworld)
 3. Deep Deterministic Policy Gradient (continous control) (under developement)
 
+The files of the tutorial are under the folder **numpy-based**
+
 # Launch tutorial:
 
 ### With binder (recommended):
