@@ -14,7 +14,7 @@ The files of the tutorial are under the folder **numpy-based**
 # Launch tutorial:
 
 ### With binder (recommended):
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/jpmartinez10/RL-tutorial/master)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/deot95/RL-tutorial/master)
 
 ### With Azure notebooks:
 [![Azure Notebooks](https://notebooks.azure.com/launch.png)](https://notebooks.azure.com/import/gh/jpmartinez10/RL-tutorial)
