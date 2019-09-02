@@ -1,7 +1,8 @@
 # Reinforcement Learning tutorial
-By: 
-##### Juan Pablo Martínez Piazuelo
+By:
 ##### Daniel Esteban Ochoa Tamayo
+##### Juan Pablo Martínez Piazuelo
+
 
 This tutorial is organized as follows:
 * **Part 0:** python/numpy introduction.
