@@ -1,8 +1,6 @@
 # Reinforcement Learning tutorial
 By:
 ##### Daniel Esteban Ochoa Tamayo
-##### Juan Pablo Martínez Piazuelo
-
 
 This tutorial is organized as follows:
 * **Part 0:** python/numpy introduction.
@@ -11,6 +9,7 @@ This tutorial is organized as follows:
 
 The files of the tutorial are under the folder **numpy-based**
 
+##### Special thanks to Juan Pablo Martínez Piazuelo
 # Launch tutorial:
 
 ### Binder:
