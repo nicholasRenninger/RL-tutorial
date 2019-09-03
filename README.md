@@ -9,7 +9,7 @@ This tutorial is organized as follows:
 
 The files of the tutorial are under the folder **numpy-based**
 
-##### Special thanks to Juan Pablo Martínez Piazuelo
+##### Developed with Juan Pablo Martínez Piazuelo
 # Launch tutorial:
 
 ### Binder:
