@@ -7,7 +7,7 @@ This tutorial is organized as follows:
 * **Part 1:** Tabular Q-learning (gridworld).
 * **Part 2:** Double Deep Q-learning (gridworld).
 
-The files of the tutorial are under the folder **numpy-based**
+The files of the tutorial are under the folder **notebooks**
 
 ##### Developed with Juan Pablo Martínez Piazuelo
 # Launch tutorial:
