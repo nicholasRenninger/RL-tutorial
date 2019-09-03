@@ -13,4 +13,4 @@ The files of the tutorial are under the folder **notebooks**
 # Launch tutorial:
 
 ### Binder:
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/deot95/RL-tutorial/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nicholasRenninger/RL-tutorial/master)
